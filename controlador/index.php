@@ -66,4 +66,25 @@ class modeloController{
 		$dato 		=	$producto->eliminar("productos",$condicion);
 		header("location:".urlsite);
 	}
+
+	 // LOGIN
+	 static function login(){		
+		$username 		= 	$_REQUEST['username'];    	
+        $password       =   $_REQUEST['password'];
+		if($username=="" || $password==""){
+           $error="Ingrese sus credenciales";
+		   require_once("vista/login.php");
+		}else{
+		$condicion= "username='" . $username . "' AND password= '". $password."'";		
+		$producto 	=	new Modelo();        
+		$dato 		=	$producto->mostrar("usuarios",$condicion);
+		if($dato){
+			require_once("vista/dashboard.php");
+		}else{
+			$error="Usuario o contraseña incorrecta";
+			require_once("vista/login.php");
+		}		
+		}	
+    	
+	}
 }

@@ -1,9 +1,11 @@
 
 <?php require_once(getcwd().'/vista/layouts/header.php') ?>
+<h3 class="text-center">Nuevo Almuerzo</h3>
 
 <div class="mx-auto" style="width: 200px; margin:20px">
 <a type="button" href="index.php?m=nuevoalmuerzo" class="btn btn-success">Nuevo Registro</a>
 </div>
+
 
 <table border="1" class="table table-striped">
 	<tr>
@@ -21,7 +23,7 @@
                 <td> <?php echo $v['nombre'] ?> </td>
                 <td>
                     <a class="btn btn-info" href="index.php?m=editaralmuerzo&id=<?php echo $v['id'] ?>">Editar</a> 
-                    <a class="btn btn-danger" href="index.php?m=eliminar&id=<?php echo $v['id'] ?>" onclick="return  confirm('Está seguro de elimiar el registro? '); false">Eliminar</a>
+                    <a class="btn btn-danger" href="index.php?m=eliminaralmuerzos&id=<?php echo $v['id'] ?>" onclick="return  confirm('Está seguro de elimiar el registro? '); false">Eliminar</a>
 
 	            </td>
             </tr>

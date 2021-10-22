@@ -4,7 +4,7 @@
 
 <div class="mx-auto" style="width: 200px; margin:20px; display:flex;">
 <div class="container">
-<a   type="button" href="index.php?m=nuevoalmuerzo" class="btn btn-success">Nuevo</a>
+<a   type="button" href="index.php?m=nuevocentrovida" class="btn btn-success">Nuevo</a>
 </div>
 
 <div class="container">

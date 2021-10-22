@@ -1,25 +1,35 @@
-.panel{ 
-    max-width: 800px;
-    padding: 20px;
-    margin: auto;
-    background: gainsboro;
+.panel {
+  max-width: 800px;
+  padding: 20px;
+  margin: auto;
+  background: gainsboro;
 }
-table{	width: 100%; border: 1px}
-h1{ text-align: center; color: black }
-a{ 
-	background: #e6e6e6;
-    color: black;
-    text-decoration: none;
-    padding: 5px 15px;
-    border: 1px solid #c1c1c1;
-    width: 100px;
-    display: inline-block;
-    text-align: center;
- }
-.text-center{
-   text-align: center;
-   color: black;
+table {
+  width: 100%;
+  border: 1px;
+}
+h1 {
+  text-align: center;
+  color: black;
+}
+a {
+  background: #e6e6e6;
+  color: black;
+  text-decoration: none;
+  padding: 5px 15px;
+  border: 1px solid #c1c1c1;
+  width: 100px;
+  display: inline-block;
+  text-align: center;
+}
+.text-center {
+  text-align: center;
+  color: black;
 }
 .btn {
-    background-color: black; color: white; padding: 10px 20px; display: inline-block; text-decoration: none;
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  display: inline-block;
+  text-decoration: none;
 }

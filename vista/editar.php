@@ -8,7 +8,7 @@
 		<input type="text" value="<?php echo $v['nombre'] ?>" name="nombre"> <br>
 		<input type="text" value="<?php echo $v['precio'] ?>" name="precio"> <br>
 		<input type="hidden" value="<?php echo $v['id'] ?>" name="id"> <br>
-		<input type="submit" class="btn" name="btn" value="Actualizar"><br>
+		<input type="submit" class="btn btn-info" name="btn" value="Actualizar"><br>
 		<input type="hidden" name="m" value="actualizar">
 	<?php endforeach;
 	endforeach; ?>

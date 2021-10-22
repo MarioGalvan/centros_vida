@@ -12,7 +12,7 @@ class modeloController
 	{
 		$producto 	=	new Modelo();
 		$dato       =  $producto->mostrar("productos", "1");
-		require_once("vista/index.php");
+		require_once("vista/login.php");
 	}
 
 
@@ -136,7 +136,7 @@ class modeloController
 		$producto 	=	new Modelo();        
 		$dato 		=	$producto->mostrar("usuarios",$condicion);
 		if($dato){
-			require_once("vista/dashboard.php");
+			self::dashboard();
 		}else{
 			$error="Usuario o contraseña incorrecta";
 			require_once("vista/login.php");
@@ -151,5 +151,10 @@ class modeloController
 		$almuerzos 	=	new Modelo();
 		$dato       =  $almuerzos->mostrar("almuerzos", "1");
 		require_once("vista/usuarios/index.php");
+	}
+
+	static function dashboard()
+	{		
+		require_once("vista/dashboard.php");
 	}
 }

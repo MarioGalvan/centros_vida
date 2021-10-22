@@ -229,4 +229,70 @@ class modeloController
 	{		
 		require_once("vista/dashboard.php");
 	}
+
+	//NUEVO USUARIO
+	static function nuevousuario()
+	{
+		$centrovida	=	new Modelo();
+		$dato       =  $centrovida->mostrar("centro_vida", "1");
+		require_once("vista/usuarios/nuevo.php");
+	}
+
+	//GUARDAR USUARIO
+	static function guardarusuario()
+	{
+		$cedula 	=	$_REQUEST['cedula'];
+		$nombre 	=	$_REQUEST['nombre'];
+		$apellido 	=	$_REQUEST['apellido'];
+		$sexo 	    =	$_REQUEST['sexo'];
+		$nacimiento	=	$_REQUEST['nacimiento'];
+		$edad    	=	$_REQUEST['edad'];
+		$username 	=	$_REQUEST['username'];
+		$rol 	    =	$_REQUEST['rol'];
+		$centrovida 	=	$_REQUEST['centrovida'];
+		$password 	=	$_REQUEST['password'];
+		$data       =   "'" . $cedula. "','".$nombre."','".$apellido."','".$sexo."',".$edad.",'".$nacimiento."','".$username."','".$password."' ,".$rol.",".$centrovida .",1";
+		$usuario	=	new Modelo();
+		$dato 		=	$usuario->insertartwo("usuarios", $data);
+		self::indexusuario();
+	}
+	static function editarusuario()
+	{
+		$id = $_REQUEST['id'];
+		$usuario 	=	new Modelo();
+		$centrovida	=	new Modelo();
+		$datoCentro       =  $centrovida->mostrar("centro_vida", "1");
+		$dato = $usuario->mostrar("usuarios", "cedula=" . $id);
+		require_once("vista/usuarios/editar.php");
+	}
+
+	static function updateusuario()
+	{
+		$cedula 	=	$_REQUEST['id'];
+		$nombre 	=	$_REQUEST['nombre'];
+		$apellido 	=	$_REQUEST['apellido'];
+		$sexo 	    =	$_REQUEST['sexo'];
+		$nacimiento	=	$_REQUEST['nacimiento'];
+		$edad    	=	$_REQUEST['edad'];
+		$username 	=	$_REQUEST['username'];
+		$rol 	    =	$_REQUEST['rol'];
+		$centrovida 	=	$_REQUEST['centrovida'];
+		$password 	=	$_REQUEST['password'];
+		$data       =   "nombre='".$nombre."',apellido='".$apellido."',genero='".$sexo."',edad=".$edad.",fecha_fallecimiento='".$nacimiento."',username='".$username."',password='".$password."' ,rol=".$rol.",centro_vida=".$centrovida .",status=1";
+		$condition  = 	"cedula='" . $cedula."'";
+		$usuario	=	new Modelo();
+		$dato 		=	$usuario->actualizar("usuarios", $data,$condition);
+		self::indexusuario();
+	}
+
+	// ELIMINAR USUARIO
+	static function eliminarusuario()
+	{
+		$id 		= 	$_REQUEST['id'];
+		$condicion  =   "cedula='" . $id."'";
+		$producto 	=	new Modelo();
+		$dato 		=	$producto->eliminar("usuarios", $condicion);
+		self::indexusuario();
+	}
+	
 }

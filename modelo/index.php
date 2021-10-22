@@ -19,6 +19,16 @@ class Modelo
             return false;
         }
     }
+    public function insertartwo($tabla, $data)
+    {
+        $consulta = "insert into " . $tabla . " values($data)";
+        $resultado = $this->db->query($consulta);
+        if ($resultado) {
+            return true;
+        } else {
+            return false;
+        }
+    }
     public function mostrar($tabla, $condicion)
     {
         $consul = "select * from " . $tabla . " where " . $condicion . ";";

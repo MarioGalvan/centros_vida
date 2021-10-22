@@ -1,6 +1,6 @@
 
 <?php require_once(getcwd().'/vista/layouts/header.php') ?>
-<h3 class="text-center">Nuevo Almuerzo</h3>
+<h3 class="text-center">Nuevo Centro de vida</h3>
 
 <div class="mx-auto" style="width: 200px; margin:20px; display:flex;">
 <div class="container">
@@ -29,8 +29,8 @@
                 <td> <?php echo $v['id'] ?> </td>
                 <td> <?php echo $v['nombre'] ?> </td>
                 <td>
-                    <a class="btn btn-info" href="index.php?m=editaralmuerzo&id=<?php echo $v['id'] ?>">Editar</a> 
-                    <a class="btn btn-danger" href="index.php?m=eliminaralmuerzos&id=<?php echo $v['id'] ?>" onclick="return  confirm('Está seguro de elimiar el registro? '); false">Eliminar</a>
+                    <a class="btn btn-info" href="index.php?m=editarcentrovida&id=<?php echo $v['id'] ?>">Editar</a> 
+                    <a class="btn btn-danger" href="index.php?m=eliminarcentrovida&id=<?php echo $v['id'] ?>" onclick="return  confirm('Está seguro de elimiar el registro? '); false">Eliminar</a>
 
 	            </td>
             </tr>

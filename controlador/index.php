@@ -22,6 +22,11 @@ class modeloController
 		require_once("vista/nuevo.php");
 	}
 
+	
+
+
+
+
 
 	//principal almuerzos
 	static function indexalmuerzo()
@@ -77,6 +82,73 @@ class modeloController
 		$dato = $almuerzo->mostrar("almuerzos", "id=" . $id);
 		require_once(getcwd() . '/vista/almuerzos/editar.php');
 	}
+
+
+
+
+
+
+
+
+	/////////////////CENTROS VIDA////////////////
+
+
+	//principal centro_vida
+	static function indexcentrovida()
+	{
+		$almuerzos 	=	new Modelo();
+		$dato       =  $almuerzos->mostrar("centro_vida", "1");
+		require_once("vista/centros_vida/index.php");
+	}
+
+	static function nuevocentrovida()
+	{
+		require_once("vista/centros_vida/nuevo.php");
+	}
+
+	//guardar centro_vida
+	static function guardarcentrovida()
+	{
+		$nombre 	=	$_REQUEST['nombre'];
+		$data       =   "'" . $nombre . "'";
+		$almuerzo	=	new Modelo();
+		$dato 		=	$almuerzo->insertar("centro_vida", $data);
+		header("location:" . urlsite . '/index.php?m=indexcentrovida');
+	}
+
+	//eliminar centro_vida
+	static function eliminarcentrovida()
+	{
+		$id 		= 	$_REQUEST['id'];
+		$condicion  =   "id=" . $id;
+		$almuerzo 	=	new Modelo();
+		$dato 		=	$almuerzo->eliminar("centro_vida", $condicion);
+		header("location:" . urlsite . '/index.php?m=indexcentrovida');
+	}
+
+	//actualizar centro_vida
+	static function actualizarcentrovida()
+	{
+		$id 		= 	$_REQUEST['id'];
+		$condicion  =   "id=" . $id;
+		$nombre =	$_REQUEST['nombre'];
+		$data       =   "nombre='" . $nombre . "'";
+		$centro_vida 	=	new Modelo();
+		$dato 		=	$centro_vida->actualizar("centro_vida", 	$data, $condicion);
+		header("location:" . urlsite . '/index.php?m=indexcentrovida');
+	}
+
+
+	//editar centro_vida
+	static function editarcentrovida()
+	{
+		$id = $_REQUEST['id'];
+		$centro_vida 	=	new Modelo();
+		$dato = $centro_vida->mostrar("centro_vida", "id=" . $id);
+		require_once(getcwd() . '/vista/centros_vida/editar.php');
+	}
+
+
 
 
 

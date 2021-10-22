@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-10-2021 a las 03:07:16
+-- Tiempo de generación: 22-10-2021 a las 04:32:00
 -- Versión del servidor: 10.4.21-MariaDB
 -- Versión de PHP: 8.0.11
 
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `almuerzos` (
   `id` int(11) NOT NULL,
-  `nombre` int(11) NOT NULL
+  `nombre` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -40,28 +40,16 @@ CREATE TABLE `almuerzos` (
 
 CREATE TABLE `centro_vida` (
   `id` int(11) NOT NULL,
-  `nombre` int(11) NOT NULL
+  `nombre` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- --------------------------------------------------------
-
 --
--- Estructura de tabla para la tabla `productos`
+-- Volcado de datos para la tabla `centro_vida`
 --
 
-CREATE TABLE `productos` (
-  `id` int(11) NOT NULL,
-  `nombre` varchar(50) NOT NULL,
-  `precio` decimal(7,2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `productos`
---
-
-INSERT INTO `productos` (`id`, `nombre`, `precio`) VALUES
-(1, 'arroz', '3000.00'),
-(2, 'papa', '4000.00');
+INSERT INTO `centro_vida` (`id`, `nombre`) VALUES
+(1, 'centro de vida 2'),
+(2, 'Centro vida angelitos 2');
 
 -- --------------------------------------------------------
 
@@ -79,8 +67,16 @@ CREATE TABLE `usuarios` (
   `username` varchar(85) NOT NULL,
   `password` varchar(35) NOT NULL,
   `rol` int(11) NOT NULL,
-  `centro_vida` int(11) NOT NULL
+  `centro_vida` int(11) NOT NULL,
+  `status` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`cedula`, `nombre`, `apellido`, `genero`, `edad`, `fecha_fallecimiento`, `username`, `password`, `rol`, `centro_vida`, `status`) VALUES
+('1', 'mario', 'montero', 'M', 23, '15/06/2020', 'mdmontero', 'mdmontero', 1, 1, '');
 
 -- --------------------------------------------------------
 
@@ -112,12 +108,6 @@ ALTER TABLE `centro_vida`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `productos`
---
-ALTER TABLE `productos`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indices de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
@@ -140,19 +130,13 @@ ALTER TABLE `usuarios_almuerzos`
 -- AUTO_INCREMENT de la tabla `almuerzos`
 --
 ALTER TABLE `almuerzos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `centro_vida`
 --
 ALTER TABLE `centro_vida`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `productos`
---
-ALTER TABLE `productos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios_almuerzos`

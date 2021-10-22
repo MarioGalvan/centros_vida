@@ -6,7 +6,10 @@
     <input class="form-control" type="text" placeholder="Ingrese Nombre almuerzo:" name="nombre"
      style ="margin:10px; width:100%; height:auto"> <br>
     <input type="submit" class="btn btn-info" name="btn" value="GUARDAR" style="margin:10px">
-    <input class="btn btn-info" type="hidden" name="m" value="guardar">
+    <input class="btn btn-info" type="hidden" name="m" value="guardaralmuerzo">
+    <a type="button" href="index.php?m=indexalmuerzo" class="btn btn-success">Volver</a>
 </form>
+
+
 </div>
 <?php require_once(getcwd().'/vista/layouts/footer.php') ?>

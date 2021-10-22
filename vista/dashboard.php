@@ -11,7 +11,7 @@
 <body>
     <div class="container">        
 
-        <a type="button" class="btn btn-primary">Usuarios</a>
+        <a type="button" href="index.php?m=indexusuario" class="btn btn-primary">Usuarios</a>
         <a type="button" href="index.php?m=indexalmuerzo" class="btn btn-secondary">Almuerzos</a>
         <a type="button" class="btn btn-success">Centros de vida</a>
         <a type="button" class="btn btn-dark">Almuerzos diarios</a>

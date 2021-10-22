@@ -9,7 +9,7 @@ class modeloController{
     static function index(){
     	$producto 	=	new Modelo();
 		$dato       =  $producto->mostrar("productos","1");
-		require_once("vista/index.php");
+		require_once("vista/login.php");
     }
 
     //nuevo

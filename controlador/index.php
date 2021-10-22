@@ -148,8 +148,8 @@ class modeloController
 	//principal almuerzos
 	static function indexusuario()
 	{
-		$almuerzos 	=	new Modelo();
-		$dato       =  $almuerzos->mostrar("almuerzos", "1");
+		$usuarios	=	new Modelo();
+		$dato       =  $usuarios->mostrar("usuarios", "1");	
 		require_once("vista/usuarios/index.php");
 	}
 

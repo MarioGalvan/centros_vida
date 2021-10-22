@@ -16,6 +16,20 @@ class modeloController{
     static function nuevo(){
     	require_once("vista/nuevo.php");	    	    	
     }
+
+
+	static function indexalmuerzo(){
+		require_once("vista/almuerzos/index.php");
+	}
+
+	static function nuevoalmuerzo(){
+		require_once("vista/almuerzos/nuevo.php");
+	}
+
+
+
+
+
 	//guardar
     static function guardar(){
     	$nombre 	=	$_REQUEST['nombre'];
